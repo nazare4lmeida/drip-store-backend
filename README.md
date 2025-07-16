@@ -27,7 +27,7 @@ Esse projeto foi desenvolvido com um conjunto de tecnologias robustas e modernas
 - **[Node.js](https://nodejs.org/en/)** - Ambiente de execução JavaScript no servidor.
 - **[Express.js](https://expressjs.com/pt-br/)** - Framework minimalista para construção de APIs.
 - **[Sequelize](https://sequelize.org/)** - ORM (Object-Relational Mapper) para Node.js, compatível com PostgreSQL, MySQL, etc.
-- **[PostgreSQL](https://www.postgresql.org/)** - Banco de dados relacional objeto-relacional de código aberto.
+- **[MySQL](https://www.mysql.com/)** - Banco de dados relacional objeto-relacional de código aberto.
 - **[Docker](https://www.docker.com/)** - Plataforma para desenvolver, enviar e executar aplicações em contêineres.
 - **[JSON Web Tokens (JWT)](https://jwt.io/)** - Padrão para criação de tokens de acesso para autenticação.
 - **[Bcrypt.js](https://github.com/dcodeIO/bcrypt.js)** - Biblioteca para hashing de senhas.
@@ -139,9 +139,9 @@ Siga os passos abaixo para ter a API rodando em seu ambiente de desenvolvimento.
 Para rodar a suíte de testes automatizados, garanta que o contêiner do Docker esteja rodando e execute:
 ```bash
 npm test
+```
 
-
-Com Postman
+**Com Postman**
 
 Uma coleção completa do Postman com exemplos de requisições para todos os principais endpoints está disponível no projeto.
 
@@ -155,4 +155,4 @@ Depois, execute a requisição POST /usuario/token com os dados do usuário cria
 As requisições protegidas já estão configuradas para usar o token automaticamente.
 
 
-Feito com ♥ by Nazaré, Jacque e Adriana.
+**Feito com ♥ by Nazaré, Jacque e Adriana.**
