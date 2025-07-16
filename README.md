@@ -77,39 +77,82 @@ Para acessá-la, basta ter o servidor rodando e clicar no link abaixo:
 
 Lá você pode visualizar e até mesmo testar cada endpoint diretamente pelo seu navegador.
 
-## 🚀 Como executar
+🚀 **Como Executar o Projeto**
 
-Siga os passos abaixo para rodar o projeto em seu ambiente de desenvolvimento.
+Siga os passos abaixo para ter a API rodando em seu ambiente de desenvolvimento.
 
-**Pré-requisitos:**
+### **Pré-requisitos**
+
 - [Node.js](https://nodejs.org/en/) (versão 16 ou superior)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado e em execução.
 
+### **Instalação**
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/nazare4lmeida/drip-store-backend.git
+    ```
+
+2.  **Acesse a pasta do projeto:**
+    ```bash
+    cd drip-store-backend
+    ```
+
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+
+4.  **Configure as variáveis de ambiente:**
+    *   Crie uma cópia do arquivo de exemplo `.env.example` e renomeie para `.env`.
+    ```bash
+    # No Windows (PowerShell)
+    copy .env.example .env
+
+    # No Mac/Linux
+    cp .env.example .env
+    ```
+    *   O arquivo `.env` já vem pré-configurado para funcionar com o ambiente Docker abaixo.
+
+### **Execução**
+
+1.  **Inicie o Banco de Dados com Docker:**
+    *   Com o Docker Desktop rodando, execute o comando abaixo para iniciar o contêiner do banco de dados MySQL em segundo plano.
+    ```bash
+    docker-compose up -d
+    ```
+
+2.  **Inicie o Servidor da API:**
+    *   Este comando iniciará o servidor em modo de desenvolvimento com o Nodemon.
+    `
+    ```bash
+    npm run dev
+    ```
+
+✨ Pronto! A API estará disponível em `http://localhost:3001` e conectada ao banco de dados.
+
+---
+
+🧪 **Testando a API**
+
+### **Com Jest**
+Para rodar a suíte de testes automatizados, garanta que o contêiner do Docker esteja rodando e execute:
 ```bash
-# 1. Clone este repositório
-$ git clone https://github.com/nazare4lmeida/drip-store-backend.git
+npm test
 
-# 2. Acesse a pasta do projeto
-$ cd drip-store-backend
 
-# 3. Crie o arquivo .env a partir do exemplo
-# (No Windows, use "copy" em vez de "cp")
-$ cp .env.example .env
+Com Postman
 
-# 4. Instale as dependências do projeto
-$ npm install
+Uma coleção completa do Postman com exemplos de requisições para todos os principais endpoints está disponível no projeto.
 
-# 5. Inicie o contêiner do MySQL com Docker Compose
-# (Este comando usará o arquivo docker-compose.yml para configurar e iniciar o banco)
-$ docker-compose up -d
+Importe a Coleção:
+Abra o Postman e importe o arquivo DripStoreAPI.postman_collection.json que está na raiz deste repositório.
 
-# 6. Rode o servidor de desenvolvimento da API
-$ npm run dev
+Fluxo de Teste:
+Primeiro, execute a requisição POST /usuario para criar uma conta.
+Depois, execute a requisição POST /usuario/token com os dados do usuário criado para obter um token de autenticação.
 
-# A API estará disponível em http://localhost:3001
+As requisições protegidas já estão configuradas para usar o token automaticamente.
 
-Para rodar os testes:
-# Garanta que o contêiner do Docker esteja rodando e execute:
-$ npm test
 
 Feito com ♥ by Nazaré, Jacque e Adriana.
