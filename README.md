@@ -67,6 +67,16 @@ A API está prefixada com `/v1`.
 
 *(Esta é uma lista resumida. Consulte o código em `src/routes` para todos os endpoints)*
 
+📖 Documentação Interativa com Swagger
+
+A documentação completa e interativa da API, com todos os endpoints, detalhes de payloads, parâmetros e respostas, foi gerada com Swagger.
+
+Para acessá-la, basta ter o servidor rodando e clicar no link abaixo:
+
+➡️ http://localhost:3001/api-docs
+
+Lá você pode visualizar e até mesmo testar cada endpoint diretamente pelo seu navegador.
+
 ## 🚀 Como executar
 
 Siga os passos abaixo para rodar o projeto em seu ambiente de desenvolvimento.
@@ -89,9 +99,9 @@ $ cp .env.example .env
 # 4. Instale as dependências do projeto
 $ npm install
 
-# 5. Inicie o contêiner do PostgreSQL com Docker
-# (Este comando só precisa ser rodado uma vez para criar o contêiner)
-$ docker run --name drip-store-db -e POSTGRES_PASSWORD=docker -e POSTGRES_USER=docker -e POSTGRES_DB=drip_store_db -p 5432:5432 -d postgres
+# 5. Inicie o contêiner do MySQL com Docker Compose
+# (Este comando usará o arquivo docker-compose.yml para configurar e iniciar o banco)
+$ docker-compose up -d
 
 # 6. Rode o servidor de desenvolvimento da API
 $ npm run dev
